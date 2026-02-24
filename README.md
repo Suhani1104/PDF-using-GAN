@@ -93,9 +93,7 @@ For roll number 102313038:
 
 Transformation applied:
 
-\[
-z = x + 1.0 \sin(1.2x)
-\]
+z = x + 1.0 * sin(1.2x)
 
 ---
 
