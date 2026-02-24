@@ -41,7 +41,7 @@ z = x + 1.0 * sin(1.2x)
 
 The goal is to:
 
-1. Assume \( z \) is sampled from an unknown distribution.
+1. Assume z is sampled from an unknown distribution.
 2. Train a GAN to learn this distribution.
 3. Use the generator to implicitly model the PDF of \( z \).
 
