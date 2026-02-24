@@ -140,7 +140,7 @@ This is a **non-parametric density estimate**, fully learned from GAN-generated 
 
 ---
 
-## 8. Experimental Results
+## 8. Results
 
 ### Training Stability
 
