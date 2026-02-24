@@ -61,10 +61,12 @@ pip install torch numpy pandas matplotlib scikit-learn
 
 ## 4. How to Run
 
-1. Place the dataset inside:
-
+1. Donwload the dataset from Kaggle:
+- https://www.kaggle.com/datasets/shrutibhargava94/india-air-quality-data
+  
+Rename it and place in root project folder:
 ```
-Data/data.csv
+Data.csv
 ```
 
 2. Run:
