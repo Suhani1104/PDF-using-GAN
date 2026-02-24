@@ -139,7 +139,7 @@ Estimated density p(z)
 The figure below shows the learned probability density of the transformed variable z. 
 The density is obtained from GAN-generated samples using Kernel Density Estimation (KDE) and is a **non-parametric density estimate**
 
-<img width="729" height="577" alt="image" src="https://github.com/user-attachments/assets/d8ac3060-521e-4931-af46-6e8affc70656" />
+<img width="500" height="396" alt="image" src="https://github.com/user-attachments/assets/d8ac3060-521e-4931-af46-6e8affc70656" />
 
 ---
 
