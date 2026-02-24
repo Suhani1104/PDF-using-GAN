@@ -111,15 +111,9 @@ Fully connected neural network:
 - ReLU
 - Linear(256 → 1)
 
-Input:
-\[
-\epsilon \sim \mathcal{N}(0,1)
-\]
+Input: epsilon ~ N(0, 1)
 
-Output:
-\[
-z_f = G(\epsilon)
-\]
+Output: z_f = G(epsilon)
 
 ---
 
@@ -136,8 +130,8 @@ Fully connected neural network:
 The discriminator distinguishes between:
 
 - Real samples: \( z \)
-- Fake samples: \( z_f = G(\epsilon) \)
-
+- Fake samples: z_f = G(epsilon)
+  
 ---
 
 ## 7. PDF Learned by GAN
@@ -147,9 +141,7 @@ After training:
 1. A large number of samples \( z_f \) are generated from the trained generator.
 2. Kernel Density Estimation (KDE) is applied to approximate:
 
-\[
-\hat{p}(z)
-\]
+Estimated density p(z)
 
 The resulting plot represents the learned probability density of the transformed variable.
 
