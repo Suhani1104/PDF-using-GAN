@@ -15,43 +15,29 @@ The GAN implicitly models the underlying distribution of the transformed variabl
 
 ## 2. Problem Statement
 
-Given NO₂ concentration values \( x \), apply a nonlinear transformation:
 
-\[
-z = T_r(x) = x + a_r \sin(b_r x)
-\]
+Given NO₂ concentration values (x), apply the nonlinear transformation:
+
+z = x + a_r * sin(b_r * x)
 
 where:
 
-\[
-a_r = 0.5 \cdot (r \bmod 7)
-\]
+a_r = 0.5 * (r mod 7)
 
-\[
-b_r = 0.3 \cdot ((r \bmod 5) + 1)
-\]
+b_r = 0.3 * ((r mod 5) + 1)
 
 For roll number:
 
-\[
 r = 102313038
-\]
 
 We compute:
 
-\[
-r \bmod 7 = 2 \Rightarrow a_r = 1.0
-\]
-
-\[
-r \bmod 5 = 3 \Rightarrow b_r = 1.2
-\]
+r mod 7 = 2  →  a_r = 1.0  
+r mod 5 = 3  →  b_r = 1.2  
 
 Final transformation used:
 
-\[
-z = x + 1.0 \sin(1.2x)
-\]
+z = x + 1.0 * sin(1.2x)
 
 The goal is to:
 
