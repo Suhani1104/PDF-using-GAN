@@ -157,76 +157,38 @@ This is a **non-parametric density estimate**, fully learned from GAN-generated 
 
 ---
 
-## 8. Results
+## 8. Experimental Results
 
-### 8.1 Training Stability
+### Training Stability
 
-Training stability is evaluated by plotting:
+The discriminator loss increases steadily while the generator loss becomes more negative and stabilizes over time. This behavior indicates that the Wasserstein objective is being optimized; however, the steadily rising critic loss suggests the discriminator may be dominating the generator during later training stages.
 
-- Discriminator loss
-- Generator loss
-
-Stable oscillatory behavior indicates balanced adversarial training.
-
-WGAN-GP improves stability by using:
-
-- Wasserstein loss
-- Gradient penalty regularization
+Overall, training remains numerically stable without divergence.
 
 ---
 
-### 8.2 Mode Coverage
+### Mode Coverage
 
-Mode coverage is evaluated by measuring histogram overlap between:
+The mode coverage score is approximately:
 
-- Real distribution
-- Generated distribution
+8.7 × 10⁻⁵
 
-Coverage score:
-
-\[
-\text{Coverage} = \frac{\sum \min(\text{Real}_i, \text{Fake}_i)}{\sum \text{Real}_i}
-\]
-
-Higher score indicates better learning of distribution modes.
+This very low score indicates that the generator captures only a small portion of the real distribution’s support. While it models the dominant density region, it underrepresents broader regions of the transformed distribution.
 
 ---
 
-### 8.3 Distribution Quality
+### Distribution Quality
 
-Distribution quality is assessed using:
+The KDE-based PDF shows a sharp peak in the lower range of z with a gradually decaying tail. The generator successfully captures the general skewed structure of the distribution but fails to fully reproduce the spread and tail behavior of the real data.
 
-- KDE-based PDF comparison
-- Mode coverage score
-- Visual histogram overlay
-
-If:
-
-- The generated PDF closely matches the real distribution
-- Mode coverage is high
-- Training remains stable
-
-Then the GAN has successfully learned the unknown distribution.
+This suggests partial learning of the distribution, with limited diversity in generated samples.
 
 ---
 
-## 9. Assignment Requirement Checklist
+## 9. Conclusion
 
-| Requirement | Status |
-|------------|--------|
-| Transformation parameters (a_r, b_r) | ✔ Included |
-| GAN architecture description | ✔ Included |
-| PDF plot from GAN samples | ✔ Generated |
-| Mode coverage observation | ✔ Included |
-| Training stability observation | ✔ Included |
-| Quality of generated distribution | ✔ Included |
-| No parametric PDF assumption | ✔ Satisfied |
-| Generator uses noise ~ N(0,1) | ✔ Satisfied |
+The GAN successfully learned a non-parametric approximation of the transformed NO₂ distribution without assuming any analytical form. 
 
----
+While training remained stable under the WGAN-GP framework, the low mode coverage score indicates incomplete distribution coverage. The generator captures the primary density region but does not fully model the variability and tail behavior of the data.
 
-## 10. Conclusion
-
-This project successfully learns the probability density of a transformed NO₂ variable using a GAN-based approach without assuming any analytical distribution form.
-
-The WGAN-GP framework enables stable training and effective implicit modeling of the unknown data distribution, fully satisfying Assignment-2 requirements.
+Further improvements could include longer training, architectural tuning, or hyperparameter optimization to enhance mode coverage and distribution quality.
