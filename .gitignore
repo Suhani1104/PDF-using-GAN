@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+
+data.csv
+
+results/
+*.png
+*.jpg
+*.npy
+
+*.pt
+*.pth
