@@ -73,15 +73,6 @@ Data/data.csv
 python gan_pdf_model.py
 ```
 
-The script will:
-
-- Load and transform data
-- Train WGAN-GP
-- Generate synthetic samples
-- Estimate PDF using KDE
-- Plot training stability
-- Compute mode coverage score
-
 ---
 
 ## 5. Transformation Parameters (a_r, b_r)
@@ -117,7 +108,7 @@ Output: z_f = G(epsilon)
 
 ---
 
-### Discriminator (Critic)
+### Discriminator 
 
 Fully connected neural network:
 
